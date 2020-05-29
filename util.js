@@ -3,7 +3,7 @@
 // Utility functions.
 //
 
-const bacnet = require('bacstack');
+const bacnet = require('node-bacnet');
 
 class Util
 {

@@ -4,7 +4,7 @@
 //
 
 const assert = require('assert');
-const bacnet = require('bacstack');
+const bacnet = require('node-bacnet');
 const BE = bacnet.enum;
 const pi = bacnet.enum.PropertyIdentifier;
 const debug = require('debug')('bacnet-device');
@@ -147,7 +147,7 @@ class BACnetDevice extends BACnetObject
 	getProperty(propertyId) {
 		switch (propertyId) {
 			case bacnet.enum.PropertyIdentifier.APDU_TIMEOUT: {
-				// Get the timeout value from node-bacstack
+				// Get the timeout value from node-node-bacnet
 				const prop = new BACnetObjectProperty(this, propertyId, undefined, true);
 				prop._value = this.client._settings.apduTimeout;
 				return prop;
@@ -482,7 +482,7 @@ class BACnetDevice extends BACnetObject
 		debug.traffic(`[recv/${msg.header.sender.address}] subscribeCovProperty: object ${objectIdName}`);
 
 		if (!msg.payload.issueConfirmedNotifications) {
-			// Unconfirmed notifications aren't yet implemented in bacstack
+			// Unconfirmed notifications aren't yet implemented in node-bacnet
 			debug(`Returning error to ${msg.header.sender.address} - unable to subscribe with unconfirmed notifications`);
 			debug.traffic(`[send/${msg.header.sender.address}] Returning error OBJECT:OPTIONAL_FUNCTIONALITY_NOT_SUPPORTED`);
 			this.client.errorResponse(
@@ -637,7 +637,7 @@ class BACnetDevice extends BACnetObject
 				}
 			);
 		} else {
-			// Sending unsubscribedCOV notifications is not yet implemented in bacstack
+			// Sending unsubscribedCOV notifications is not yet implemented in node-bacnet
 		}
 	}
 
@@ -653,7 +653,7 @@ class BACnetDevice extends BACnetObject
 	 *   Property class instance to encode.  This must be an instance of
 	 *   BACnetObjectProperty as we need to access the property data type.
 	 *
-	 * @return Object suitable for passing to node-bacstack in a BACnet message
+	 * @return Object suitable for passing to node-node-bacnet in a BACnet message
 	 *   response.
 	 */
 	encodePropValue(property) {

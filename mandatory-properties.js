@@ -1,4 +1,4 @@
-const BE = require('bacstack').enum;
+const BE = require('node-bacnet').enum;
 const pi = BE.PropertyIdentifier;
 
 // Note that OBJECT_IDENTIFIER, OBJECT_NAME, OBJECT_TYPE and PROPERTY_LIST are

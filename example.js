@@ -4,7 +4,7 @@
 //
 
 const BACnetDevice = require('./index.js');
-const BE = require('bacstack').enum;
+const BE = require('node-bacnet').enum;
 
 const dev = new BACnetDevice({
 	// These parameters are all mandatory by the BACnet spec.

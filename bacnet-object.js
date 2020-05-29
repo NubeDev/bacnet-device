@@ -4,7 +4,7 @@
 //
 
 const assert = require('assert');
-const bacnet = require('bacstack');
+const bacnet = require('node-bacnet');
 const debug = require('debug')('bacnet-device');
 debug.error = debug.extend('error*');
 

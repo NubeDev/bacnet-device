@@ -4,7 +4,7 @@
 //
 
 const nodeUtil = require('util');
-const bacnet = require('bacstack');
+const bacnet = require('node-bacnet');
 
 const propertyTypeMap = require('./typemap-property');
 const Util = require('./util');

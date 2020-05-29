@@ -3,7 +3,7 @@
 // Mapping between properties and default types.
 //
 
-const bacnet = require('bacstack');
+const bacnet = require('node-bacnet');
 
 const pi = bacnet.enum.PropertyIdentifier;
 const type = bacnet.enum.ApplicationTags;
